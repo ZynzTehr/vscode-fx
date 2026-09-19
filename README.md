@@ -1,172 +1,196 @@
-# VS Code FX
+<p align="center">
+  <img src="static/header.svg" alt="VS Code FX" width="800" />
+</p>
 
-**Premium animations, neon glows, ripple effects, and smooth motion for VS Code.**
+<p align="center">
+  <strong>Premium animations, neon glows, ripple effects, and smooth motion for VS Code.</strong><br />
+  Theme-aware · Fully customizable · Zero configuration needed
+</p>
 
-Theme-aware. Fully customizable. Zero configuration needed.
+<p align="center">
+  <a href="https://marketplace.visualstudio.com/items?itemName=VSCodeFX.vscode-fx">
+    <img src="https://img.shields.io/visual-studio-marketplace/v/VSCodeFX.vscode-fx?style=for-the-badge&color=00d4ff&label=Marketplace" alt="Version" />
+  </a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=VSCodeFX.vscode-fx">
+    <img src="https://img.shields.io/visual-studio-marketplace/i/VSCodeFX.vscode-fx?style=for-the-badge&color=7b2ff7&label=Installs" alt="Installs" />
+  </a>
+  <a href="https://github.com/ZynzTehr/vscode-fx/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/ZynzTehr/vscode-fx?style=for-the-badge&color=00d4ff" alt="License" />
+  </a>
+</p>
 
 ---
 
-## Features
+<p align="center">
+  <img src="static/hero.jpg" alt="VS Code FX in action" width="900" />
+</p>
 
-| Effect | Description |
-|--------|-------------|
-| **Neon Glow** | Active line glow + syntax token text-shadow with adjustable intensity |
-| **Ripple Effects** | Material Design ripple on clicks — tabs, buttons, menus |
-| **UI Polish** | Hover lifts, input glow, accent highlights, scrollbar styling |
-| **Smooth Cursor** | Smooth / trail / fade cursor movement animations |
-| **Scrolling** | Slide or fade content into view as you scroll |
-| **Tab Animations** | Slide, fade, or scale tabs on open/close |
-| **Command Palette** | Fade, scale, or slideDown entrance animation |
-| **Focus Dimming** | Dim unfocused panes — Window, Column, or Full Window modes |
-| **Active Indent** | Highlight active line with indent, scale, or fade effects |
-| **Terminal FX** | Glow borders, focus dimming, and ripples in the terminal |
+---
+
+## What You Get
+
+> **10 hand-crafted animation systems** that transform your editor from flat to cinematic — all running on pure CSS with zero performance overhead.
+
+<table>
+<tr>
+<td width="50%">
+
+### Neon Glow
+Active line glow + syntax token text-shadow with adjustable intensity
+
+### Ripple Effects
+Material Design ripple on clicks — tabs, buttons, menus
+
+### Smooth Cursor
+Smooth / trail / fade cursor movement
+
+### Tab Animations
+Slide, fade, or scale tabs on open/close
+
+### Focus Dimming
+Dim unfocused panes — Window, Column, or Full Window
+
+</td>
+<td width="50%">
+
+### UI Polish
+Hover lifts, input glow, accent highlights, scrollbar styling
+
+### Scrolling
+Slide or fade content into view as you scroll
+
+### Command Palette
+Fade, scale, or slideDown entrance animation
+
+### Active Indent
+Highlight active line with indent, scale, or fade
+
+### Terminal FX
+Glow borders, focus dimming, and ripples in the terminal
+
+</td>
+</tr>
+</table>
 
 All effects respect `prefers-reduced-motion` and high-contrast themes.
 
 ---
 
-## Installation
+## Showcase
 
-1. Install **VS Code FX** from the Extensions Marketplace
-2. Install one of the required CSS injection helpers:
-   - [Custom CSS and JS Loader](https://marketplace.visualstudio.com/items?itemName=be5invis.vscode-custom-css) *(recommended)*
-   - [Apc Customize UI++](https://marketplace.visualstudio.com/items?itemName=drcika.apc-extension)
-3. Run the command **VS Code FX: Install / Reload Effects** from the Command Palette (`Cmd+Shift+P` / `Ctrl+Shift+P`)
-4. Reload VS Code when prompted
-
-> **Note:** VS Code FX will auto-detect your helper extension on first launch. If neither is installed, it will prompt you to choose one.
+<table>
+<tr>
+<td width="50%" align="center">
+<img src="static/feature-glow.jpg" alt="Neon Glow Effects" width="450" /><br />
+<strong>Neon Glow</strong> — Active line and syntax token glow
+</td>
+<td width="50%" align="center">
+<img src="static/feature-ui.jpg" alt="UI Polish Effects" width="450" /><br />
+<strong>UI Polish</strong> — Tab lift, input glow, accent highlights
+</td>
+</tr>
+</table>
 
 ---
 
-## Settings
+## Quick Start
 
-All settings are available in **Settings UI** under `Extensions > VS Code FX`.
+```
+1.  Install VS Code FX from the Extensions Marketplace
+2.  Pick a CSS injection helper when prompted (recommended: Custom CSS and JS Loader)
+3.  Reload VS Code
+4.  Done — effects are active immediately
+```
 
-### Global
+> **That's it.** Everything is enabled by default. Tweak individual effects anytime in Settings > VS Code FX.
 
-| Setting | Default | Description |
+### Required Helper Extension
+
+VS Code FX needs a CSS injection helper to apply effects. Choose one:
+
+| Helper | Extension ID | Notes |
+|--------|-------------|-------|
+| **Custom CSS and JS Loader** *(recommended)* | `be5invis.vscode-custom-css` | Stable, widely used |
+| **Apc Customize UI++** | `drcika.apc-extension` | More features, occasionally breaks |
+
+VS Code FX auto-detects which one you have installed. If neither is found, it prompts you on first launch.
+
+---
+
+## Settings at a Glance
+
+All settings live under **Settings > Extensions > VS Code FX**. Here's the highlights:
+
+### Master Controls
+
+| Setting | Default | What it does |
 |---------|---------|-------------|
-| `vscodeFX.enabled` | `true` | Master toggle — enable/disable all effects |
-| `vscodeFX.installMethod` | `Custom CSS and JS` | CSS injection helper to use |
-| `vscodeFX.autoInstall` | `true` | Auto re-install when settings change |
+| `vscodeFX.enabled` | `true` | Master kill switch |
+| `vscodeFX.autoInstall` | `true` | Auto-apply when settings change |
 | `vscodeFX.animationSpeed` | `normal` | Global speed: `slow` / `normal` / `fast` |
 
-### Neon Glow
+### Per-Effect Toggles
 
-| Setting | Default | Description |
-|---------|---------|-------------|
-| `vscodeFX.glow.enabled` | `true` | Neon glow on active editor line |
-| `vscodeFX.glow.syntaxTokens` | `true` | Text-shadow glow on syntax tokens |
-| `vscodeFX.glow.intensity` | `normal` | `subtle` / `normal` / `intense` |
-| `vscodeFX.glow.color` | *(auto)* | Custom hex color or auto-detect from theme |
+Every effect has its own `.enabled` toggle and `.style` selector:
 
-### Ripple Effects
+```
+vscodeFX.glow.enabled          → true/false
+vscodeFX.glow.intensity        → subtle / normal / intense
+vscodeFX.ripples.enabled       → true/false
+vscodeFX.cursor.style           → smooth / trail / fade
+vscodeFX.tabs.style             → slide / fade / scale
+vscodeFX.commandPalette.style   → fade / scale / slideDown
+vscodeFX.focusDimming.mode      → Window / Column / Full Window
+vscodeFX.activeIndent.style     → indent / scale / fade
+```
 
-| Setting | Default | Description |
-|---------|---------|-------------|
-| `vscodeFX.ripples.enabled` | `true` | Material Design ripple on clicks |
-| `vscodeFX.ripples.color` | *(auto)* | Custom hex color or auto-detect |
+### Fine-Tuning
 
-### UI Polish
+Custom durations for every animation (50–1000ms):
 
-| Setting | Default | Description |
-|---------|---------|-------------|
-| `vscodeFX.uiPolish.enabled` | `true` | Hover effects and accent highlights |
-| `vscodeFX.uiPolish.tabLift` | `true` | Tabs lift on hover |
-| `vscodeFX.uiPolish.inputGlow` | `true` | Glow on focused inputs |
-| `vscodeFX.uiPolish.accentColor` | *(auto)* | Custom accent hex color |
+```
+vscodeFX.durations.cursor          → 200ms
+vscodeFX.durations.scrolling       → 200ms
+vscodeFX.durations.tabs            → 300ms
+vscodeFX.durations.commandPalette  → 300ms
+vscodeFX.durations.focusDimming    → 200ms
+vscodeFX.durations.uiPolish        → 140ms
+```
 
-### Cursor
+Custom colors override theme detection:
 
-| Setting | Default | Description |
-|---------|---------|-------------|
-| `vscodeFX.cursor.enabled` | `true` | Smooth cursor movement |
-| `vscodeFX.cursor.style` | `smooth` | `smooth` / `trail` / `fade` |
+```
+vscodeFX.glow.color             → hex color or empty (auto)
+vscodeFX.ripples.color          → hex color or empty (auto)
+vscodeFX.uiPolish.accentColor   → hex color or empty (auto)
+```
 
-### Scrolling
+Advanced users can inject raw CSS:
 
-| Setting | Default | Description |
-|---------|---------|-------------|
-| `vscodeFX.scrolling.enabled` | `true` | Smooth scrolling animation |
-| `vscodeFX.scrolling.style` | `slide` | `slide` / `fade` |
-
-### Tabs
-
-| Setting | Default | Description |
-|---------|---------|-------------|
-| `vscodeFX.tabs.enabled` | `true` | Tab open/close animation |
-| `vscodeFX.tabs.style` | `slide` | `slide` / `fade` / `scale` |
-
-### Command Palette
-
-| Setting | Default | Description |
-|---------|---------|-------------|
-| `vscodeFX.commandPalette.enabled` | `true` | Palette entrance animation |
-| `vscodeFX.commandPalette.style` | `fade` | `fade` / `scale` / `slideDown` |
-
-### Focus Dimming
-
-| Setting | Default | Description |
-|---------|---------|-------------|
-| `vscodeFX.focusDimming.enabled` | `false` | Dim unfocused panes |
-| `vscodeFX.focusDimming.amount` | `60` | 0 (none) to 100 (fully dimmed) |
-| `vscodeFX.focusDimming.mode` | `Window` | `Window` / `Column` / `Full Window` |
-
-### Active Indent
-
-| Setting | Default | Description |
-|---------|---------|-------------|
-| `vscodeFX.activeIndent.enabled` | `true` | Active line animation |
-| `vscodeFX.activeIndent.style` | `indent` | `indent` / `scale` / `fade` |
-
-### Terminal
-
-| Setting | Default | Description |
-|---------|---------|-------------|
-| `vscodeFX.terminal.enabled` | `true` | Terminal effects |
-| `vscodeFX.terminal.focusDimming` | `true` | Dim terminal when unfocused |
-| `vscodeFX.terminal.panelGlow` | `true` | Glow border when focused |
-
-### Durations (ms)
-
-| Setting | Default | Description |
-|---------|---------|-------------|
-| `vscodeFX.durations.cursor` | `200` | Cursor animation speed |
-| `vscodeFX.durations.scrolling` | `200` | Scroll animation speed |
-| `vscodeFX.durations.tabs` | `300` | Tab animation speed |
-| `vscodeFX.durations.commandPalette` | `300` | Palette animation speed |
-| `vscodeFX.durations.focusDimming` | `200` | Dimming transition speed |
-| `vscodeFX.durations.uiPolish` | `140` | Hover/focus effect speed |
-
-### Advanced
-
-| Setting | Default | Description |
-|---------|---------|-------------|
-| `vscodeFX.customCSS` | *(empty)* | Additional custom CSS to inject |
+```
+vscodeFX.customCSS              → multiline CSS string
+```
 
 ---
 
 ## Commands
 
-| Command | Description |
+| Command | What it does |
 |---------|-------------|
-| `VS Code FX: Enable All Effects` | Turn on all effects |
-| `VS Code FX: Disable All Effects` | Turn off all effects |
-| `VS Code FX: Install / Reload Effects` | Re-generate and inject CSS/JS |
-| `VS Code FX: Change Install Method` | Switch between CSS injection helpers |
+| **VS Code FX: Enable All Effects** | Turn everything on |
+| **VS Code FX: Disable All Effects** | Turn everything off |
+| **VS Code FX: Install / Reload Effects** | Re-generate and inject CSS/JS |
+| **VS Code FX: Change Install Method** | Switch between CSS injection helpers |
 
 ---
 
 ## How It Works
 
-VS Code FX generates custom CSS and JavaScript based on your settings, then injects them into VS Code's UI via a helper extension ([Custom CSS and JS Loader](https://marketplace.visualstudio.com/items?itemName=be5invis.vscode-custom-css) or [Apc Customize UI++](https://marketplace.visualstudio.com/items?itemName=drcika.apc-extension)).
+```
+Settings change → CSS/JS regenerated → Helper extension injects into VS Code → Reload
+```
 
-When you change a setting:
-1. CSS/JS is regenerated from your current configuration
-2. The helper extension's imports are updated
-3. VS Code reloads to apply changes
-
-All animations use CSS custom properties and class toggles, making them lightweight and performant.
+VS Code FX generates custom CSS and JavaScript from your settings, then pipes them into VS Code's UI via the helper extension. All animations use CSS custom properties and class toggles — lightweight, no JavaScript runtime overhead in the editor.
 
 ---
 
@@ -181,10 +205,10 @@ All animations use CSS custom properties and class toggles, making them lightwei
 
 ## Contributing
 
-Contributions welcome! Please open an issue or PR on the [GitHub repository](https://github.com/vscode-fx/vscode-fx).
+Contributions welcome! [Open an issue](https://github.com/ZynzTehr/vscode-fx/issues) or [submit a PR](https://github.com/ZynzTehr/vscode-fx/pulls).
 
 ---
 
-## License
-
-[MIT](LICENSE)
+<p align="center">
+  <strong>MIT License</strong> · Made with caffeine and CSS
+</p>

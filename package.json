@@ -2,7 +2,7 @@
   "name": "vscode-fx",
   "displayName": "VS Code FX",
   "description": "Premium animations, neon glows, ripple effects, and smooth motion for VS Code — theme-aware and fully customizable",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/ZynzTehr/vscode-fx.git"
