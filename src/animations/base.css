@@ -1,0 +1,41 @@
+/* VS Code FX — Base Styles
+   Ripple overlay CSS, reduced motion, high contrast, and CSS custom properties. */
+
+/* Ripple overlay layers */
+.fx-ripple-layer {
+    position: fixed;
+    overflow: hidden;
+    pointer-events: none !important;
+    z-index: 2147483647;
+    contain: strict;
+}
+.fx-ripple {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none !important;
+    background: var(--fx-ripple-color, #007acc);
+    opacity: .22;
+    transform: scale(0);
+    animation: fx-ripple-expand 460ms cubic-bezier(.2, .7, .3, 1) forwards;
+}
+@keyframes fx-ripple-expand { to { transform: scale(1); opacity: 0; } }
+
+/* Reduced motion — disable all animations and transitions */
+@media (prefers-reduced-motion: reduce) {
+    .monaco-workbench *,
+    .monaco-workbench *::before,
+    .monaco-workbench *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    .fx-ripple-layer { display: none !important; }
+}
+
+/* High contrast — disable glows */
+@media (forced-colors: active) {
+    .fx-ripple-layer { display: none !important; }
+}
+.monaco-workbench:is(.hc-black, .hc-light) {
+    --fx-glow: transparent;
+}

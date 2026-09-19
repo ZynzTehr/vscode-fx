@@ -1,0 +1,20 @@
+/* VS Code FX — Scrolling Animation */
+
+/* Slide scroll — smooth content transition */
+.fx-scroll-slide .monaco-editor .lines-content {
+    transition: transform var(--fx-scroll-duration, 200ms) cubic-bezier(.25, .46, .45, .94) !important;
+}
+
+/* Fade scroll — content fades at edges */
+.fx-scroll-fade .monaco-editor .overflow-guard {
+    mask-image: linear-gradient(to bottom,
+        transparent 0%,
+        black 5%,
+        black 95%,
+        transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom,
+        transparent 0%,
+        black 5%,
+        black 95%,
+        transparent 100%);
+}

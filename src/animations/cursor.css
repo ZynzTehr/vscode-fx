@@ -1,0 +1,23 @@
+/* VS Code FX — Cursor Animation */
+
+/* Smooth cursor */
+.fx-cursor-smooth .monaco-editor .cursor {
+    transition: all var(--fx-cursor-duration, 200ms) cubic-bezier(.2, .8, .2, 1) !important;
+}
+
+/* Trail cursor — leaves a fading after-image */
+.fx-cursor-trail .monaco-editor .cursor {
+    transition: all var(--fx-cursor-duration, 200ms) ease-out !important;
+    box-shadow: 0 0 6px var(--fx-accent),
+                0 0 12px color-mix(in srgb, var(--fx-accent) 40%, transparent) !important;
+}
+
+/* Fade cursor */
+.fx-cursor-fade .monaco-editor .cursor {
+    transition: all var(--fx-cursor-duration, 200ms) ease-in-out !important;
+    animation: fx-cursor-pulse 1.2s ease-in-out infinite;
+}
+@keyframes fx-cursor-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}

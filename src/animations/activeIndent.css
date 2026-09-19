@@ -1,0 +1,23 @@
+/* VS Code FX — Active Line Indent Animation */
+
+/* Indent style — sliding indent marker */
+.fx-indent-indent .monaco-editor .view-overlays .current-line {
+    border-left: 3px solid var(--fx-accent) !important;
+    transition: all 200ms cubic-bezier(.2, .8, .2, 1) !important;
+}
+
+/* Scale style — subtle scale on active line */
+.fx-indent-scale .monaco-editor .view-overlays .current-line {
+    transition: transform 200ms cubic-bezier(.2, .8, .2, 1) !important;
+    transform: scaleX(1.005);
+    transform-origin: left center;
+}
+
+/* Fade style — active line fades in */
+.fx-indent-fade .monaco-editor .view-overlays .current-line {
+    animation: fx-indent-fade-in 200ms ease both;
+}
+@keyframes fx-indent-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

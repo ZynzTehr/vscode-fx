@@ -1,0 +1,17 @@
+/* VS Code FX — Neon Glow
+   Active line border + shadow, syntax token text-shadow.
+   Intensity and color are controlled via CSS custom properties. */
+
+/* Active line neon border and glow */
+.monaco-editor .view-overlays .current-line {
+    box-shadow: inset 0 0 var(--fx-glow-spread, 8px) var(--fx-glow-inner, rgba(29, 169, 234, 0.4)),
+                0 0 var(--fx-glow-outer-spread, 12px) var(--fx-glow-outer, rgba(29, 169, 234, 0.2)) !important;
+    border: 1px solid var(--fx-glow-border, rgba(29, 169, 234, 0.6)) !important;
+}
+
+/* Syntax token text-shadow glow */
+.fx-syntax-glow .monaco-editor .view-line span > span {
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.3),
+                 0 0 10px currentColor,
+                 0 0 2px currentColor !important;
+}

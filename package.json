@@ -1,0 +1,411 @@
+{
+  "name": "vscode-fx",
+  "displayName": "VS Code FX",
+  "description": "Premium animations, neon glows, ripple effects, and smooth motion for VS Code — theme-aware and fully customizable",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ZynzTehr/vscode-fx.git"
+  },
+  "extensionDependencies": [],
+  "extensionKind": [
+    "ui"
+  ],
+  "icon": "static/logo.png",
+  "author": {
+    "name": ""
+  },
+  "publisher": "vscode-fx",
+  "readme": "README.md",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Themes",
+    "Other"
+  ],
+  "keywords": [
+    "vscode",
+    "animations",
+    "animation",
+    "glow",
+    "neon",
+    "ripple",
+    "effects",
+    "smooth",
+    "cursor",
+    "theme",
+    "terminal",
+    "ui",
+    "polish",
+    "fx"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "vscodeFX.enable",
+        "title": "Enable All Effects",
+        "category": "VS Code FX"
+      },
+      {
+        "command": "vscodeFX.disable",
+        "title": "Disable All Effects",
+        "category": "VS Code FX"
+      },
+      {
+        "command": "vscodeFX.install",
+        "title": "Install / Reload Effects",
+        "category": "VS Code FX"
+      },
+      {
+        "command": "vscodeFX.changeInstallMethod",
+        "title": "Change Install Method",
+        "category": "VS Code FX"
+      }
+    ],
+    "configuration": {
+      "title": "VS Code FX",
+      "properties": {
+        "vscodeFX.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Master toggle — enable or disable all effects",
+          "order": 0
+        },
+        "vscodeFX.installMethod": {
+          "type": "string",
+          "enum": [
+            "Custom CSS and JS",
+            "Apc Customize UI++"
+          ],
+          "default": "Custom CSS and JS",
+          "description": "Which helper extension to use for CSS injection",
+          "order": 1
+        },
+        "vscodeFX.autoInstall": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically re-install effects when settings change",
+          "order": 2
+        },
+        "vscodeFX.animationSpeed": {
+          "type": "string",
+          "enum": [
+            "slow",
+            "normal",
+            "fast"
+          ],
+          "enumDescriptions": [
+            "Relaxed, cinematic transitions (1.5x duration)",
+            "Balanced speed (default)",
+            "Snappy, responsive transitions (0.6x duration)"
+          ],
+          "default": "normal",
+          "description": "Global animation speed multiplier",
+          "order": 3
+        },
+        "vscodeFX.glow.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Neon glow on the active editor line",
+          "order": 10
+        },
+        "vscodeFX.glow.syntaxTokens": {
+          "type": "boolean",
+          "default": true,
+          "description": "Text-shadow glow on syntax-highlighted code tokens",
+          "order": 11
+        },
+        "vscodeFX.glow.intensity": {
+          "type": "string",
+          "enum": [
+            "subtle",
+            "normal",
+            "intense"
+          ],
+          "enumDescriptions": [
+            "Faint, barely visible glow",
+            "Balanced neon glow (default)",
+            "Strong, vivid neon glow"
+          ],
+          "default": "normal",
+          "description": "Glow brightness",
+          "order": 12
+        },
+        "vscodeFX.glow.color": {
+          "type": "string",
+          "default": "",
+          "description": "Custom glow color (hex). Leave empty to auto-detect from theme",
+          "order": 13
+        },
+        "vscodeFX.ripples.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Material Design ripple effect on clicks (tabs, buttons, menus)",
+          "order": 20
+        },
+        "vscodeFX.ripples.color": {
+          "type": "string",
+          "default": "",
+          "description": "Custom ripple color (hex). Leave empty to auto-detect from theme",
+          "order": 21
+        },
+        "vscodeFX.uiPolish.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Hover effects, accent highlights, and glow on UI elements",
+          "order": 30
+        },
+        "vscodeFX.uiPolish.tabLift": {
+          "type": "boolean",
+          "default": true,
+          "description": "Tabs lift slightly on hover",
+          "order": 31
+        },
+        "vscodeFX.uiPolish.inputGlow": {
+          "type": "boolean",
+          "default": true,
+          "description": "Glow on focused search boxes and input fields",
+          "order": 32
+        },
+        "vscodeFX.uiPolish.accentColor": {
+          "type": "string",
+          "default": "",
+          "description": "Custom UI accent color (hex). Leave empty to auto-detect from theme",
+          "order": 33
+        },
+        "vscodeFX.cursor.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Smooth cursor movement animation",
+          "order": 40
+        },
+        "vscodeFX.cursor.style": {
+          "type": "string",
+          "enum": [
+            "smooth",
+            "trail",
+            "fade"
+          ],
+          "enumDescriptions": [
+            "Smooth ease-out cursor transitions",
+            "Cursor leaves a fading trail",
+            "Cursor fades between positions"
+          ],
+          "default": "smooth",
+          "description": "Cursor animation style",
+          "order": 41
+        },
+        "vscodeFX.scrolling.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Smooth scrolling animation in the editor",
+          "order": 50
+        },
+        "vscodeFX.scrolling.style": {
+          "type": "string",
+          "enum": [
+            "slide",
+            "fade"
+          ],
+          "enumDescriptions": [
+            "Content slides smoothly into view",
+            "Content fades in as you scroll"
+          ],
+          "default": "slide",
+          "description": "Scrolling animation style",
+          "order": 51
+        },
+        "vscodeFX.tabs.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Tab open/close animation",
+          "order": 60
+        },
+        "vscodeFX.tabs.style": {
+          "type": "string",
+          "enum": [
+            "slide",
+            "fade",
+            "scale"
+          ],
+          "enumDescriptions": [
+            "Tabs slide in from the side",
+            "Tabs fade in/out",
+            "Tabs scale up from zero"
+          ],
+          "default": "slide",
+          "description": "Tab animation style",
+          "order": 61
+        },
+        "vscodeFX.commandPalette.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Command palette appearance animation",
+          "order": 70
+        },
+        "vscodeFX.commandPalette.style": {
+          "type": "string",
+          "enum": [
+            "fade",
+            "scale",
+            "slideDown"
+          ],
+          "enumDescriptions": [
+            "Fades in smoothly",
+            "Scales up from center",
+            "Slides down from top"
+          ],
+          "default": "fade",
+          "description": "Command palette animation style",
+          "order": 71
+        },
+        "vscodeFX.focusDimming.enabled": {
+          "type": "boolean",
+          "default": false,
+          "description": "Dim unfocused editor panes and panels",
+          "order": 80
+        },
+        "vscodeFX.focusDimming.amount": {
+          "type": "number",
+          "default": 60,
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Dimming intensity (0 = no dimming, 100 = fully dimmed)",
+          "order": 81
+        },
+        "vscodeFX.focusDimming.mode": {
+          "type": "string",
+          "enum": [
+            "Window",
+            "Column",
+            "Full Window"
+          ],
+          "enumDescriptions": [
+            "Dim only the unfocused editor group",
+            "Dim unfocused columns",
+            "Dim everything except the focused element"
+          ],
+          "default": "Window",
+          "description": "What to dim when focus changes",
+          "order": 82
+        },
+        "vscodeFX.activeIndent.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Active line indent/highlight animation",
+          "order": 90
+        },
+        "vscodeFX.activeIndent.style": {
+          "type": "string",
+          "enum": [
+            "indent",
+            "scale",
+            "fade"
+          ],
+          "enumDescriptions": [
+            "Active line slides with an indent marker",
+            "Active line scales subtly",
+            "Active line fades in"
+          ],
+          "default": "indent",
+          "description": "Active line animation style",
+          "order": 91
+        },
+        "vscodeFX.terminal.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Apply effects to the integrated terminal (glow, dimming, ripples)",
+          "order": 100
+        },
+        "vscodeFX.terminal.focusDimming": {
+          "type": "boolean",
+          "default": true,
+          "description": "Dim terminal when not focused",
+          "order": 101
+        },
+        "vscodeFX.terminal.panelGlow": {
+          "type": "boolean",
+          "default": true,
+          "description": "Glow on terminal panel border when focused",
+          "order": 102
+        },
+        "vscodeFX.durations.cursor": {
+          "type": "number",
+          "default": 200,
+          "minimum": 50,
+          "maximum": 1000,
+          "description": "Cursor animation duration (ms)",
+          "order": 110
+        },
+        "vscodeFX.durations.scrolling": {
+          "type": "number",
+          "default": 200,
+          "minimum": 50,
+          "maximum": 1000,
+          "description": "Scroll animation duration (ms)",
+          "order": 111
+        },
+        "vscodeFX.durations.tabs": {
+          "type": "number",
+          "default": 300,
+          "minimum": 50,
+          "maximum": 1000,
+          "description": "Tab animation duration (ms)",
+          "order": 112
+        },
+        "vscodeFX.durations.commandPalette": {
+          "type": "number",
+          "default": 300,
+          "minimum": 50,
+          "maximum": 1000,
+          "description": "Command palette animation duration (ms)",
+          "order": 113
+        },
+        "vscodeFX.durations.focusDimming": {
+          "type": "number",
+          "default": 200,
+          "minimum": 50,
+          "maximum": 1000,
+          "description": "Focus dimming transition duration (ms)",
+          "order": 114
+        },
+        "vscodeFX.durations.uiPolish": {
+          "type": "number",
+          "default": 140,
+          "minimum": 50,
+          "maximum": 1000,
+          "description": "Hover/focus effect speed (ms)",
+          "order": 115
+        },
+        "vscodeFX.customCSS": {
+          "type": "string",
+          "default": "",
+          "description": "Additional custom CSS to inject (advanced)",
+          "editPresentation": "multilineText",
+          "order": 200
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "vsce:package": "vsce package",
+    "vsce:publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@vscode/vsce": "latest",
+    "ts-loader": "^9.6.2",
+    "typescript": "^5.9.3",
+    "webpack": "latest",
+    "webpack-cli": "latest"
+  }
+}

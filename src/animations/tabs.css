@@ -1,0 +1,28 @@
+/* VS Code FX — Tab Animations */
+
+/* Slide tabs */
+.fx-tabs-slide .monaco-workbench .part.editor .tabs-container .tab {
+    animation: fx-tab-slide-in var(--fx-tab-duration, 300ms) cubic-bezier(.2, .8, .2, 1) both;
+}
+@keyframes fx-tab-slide-in {
+    from { transform: translateX(30px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Fade tabs */
+.fx-tabs-fade .monaco-workbench .part.editor .tabs-container .tab {
+    animation: fx-tab-fade-in var(--fx-tab-duration, 300ms) ease both;
+}
+@keyframes fx-tab-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Scale tabs */
+.fx-tabs-scale .monaco-workbench .part.editor .tabs-container .tab {
+    animation: fx-tab-scale-in var(--fx-tab-duration, 300ms) cubic-bezier(.2, .8, .2, 1) both;
+}
+@keyframes fx-tab-scale-in {
+    from { transform: scale(0.85); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}

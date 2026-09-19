@@ -1,0 +1,95 @@
+/* VS Code FX — UI Polish
+   Hover effects, accent highlights, input glow, scrollbar styling.
+   Uses --fx-accent and --fx-glow for theme-aware colors. */
+
+.fx-ui-polish .monaco-workbench :is(.tabs-container .tab, .monaco-list-row, .monaco-button,
+    .action-label, .monaco-breadcrumb-item, .pane-header, .statusbar-item-label,
+    .monaco-menu .action-item) {
+    transition: background-color var(--fx-speed, 140ms) ease,
+        box-shadow var(--fx-speed, 140ms) ease,
+        translate 180ms cubic-bezier(.2, .8, .2, 1) !important;
+}
+
+/* Editor tab hover — accent top border + inner glow */
+.fx-ui-polish .monaco-workbench .part.editor .tabs-container .tab:hover {
+    box-shadow: inset 0 2px var(--fx-accent), inset 0 -12px 18px -16px var(--fx-accent) !important;
+}
+.fx-ui-polish .monaco-workbench .part.editor .tabs-container .tab.active {
+    box-shadow: inset 0 2px var(--fx-accent), inset 0 8px 16px -12px var(--fx-accent) !important;
+}
+
+/* Explorer, search, source control, extensions lists */
+.fx-ui-polish .monaco-workbench .monaco-list-row:hover { box-shadow: inset 2px 0 var(--fx-accent); }
+.fx-ui-polish .monaco-workbench .monaco-list-row.focused { box-shadow: inset 3px 0 var(--fx-accent); }
+.fx-ui-polish .monaco-workbench :is(.monaco-menu .action-item, .monaco-breadcrumb-item, .pane-header):hover {
+    box-shadow: inset 0 -1px var(--fx-glow);
+}
+
+/* Buttons */
+.fx-ui-polish .monaco-workbench .monaco-button:not(.disabled):not([aria-disabled="true"]):hover {
+    box-shadow: 0 0 0 1px var(--fx-accent), 0 3px 12px var(--fx-glow);
+}
+.fx-ui-polish .monaco-workbench .monaco-button:not(.disabled):not([aria-disabled="true"]):active {
+    box-shadow: inset 0 0 0 2px var(--fx-accent);
+}
+
+/* Action labels */
+.fx-ui-polish .monaco-workbench .action-item:not(.disabled) > .action-label:hover {
+    box-shadow: inset 0 -2px var(--fx-accent);
+}
+.fx-ui-polish .monaco-workbench .part.activitybar .action-item.checked > .action-label {
+    filter: drop-shadow(0 0 5px var(--fx-glow));
+}
+
+/* Focus outlines */
+.fx-ui-polish .monaco-workbench :is(.monaco-button, .action-label, .monaco-breadcrumb-item, .statusbar-item-label):focus-visible {
+    outline: 1px solid var(--fx-accent) !important;
+    outline-offset: -2px;
+}
+
+/* Input glow */
+.fx-input-glow .monaco-workbench :is(.monaco-inputbox, .monaco-findInput) {
+    transition: box-shadow 180ms ease !important;
+}
+.fx-input-glow .monaco-workbench :is(.monaco-inputbox, .monaco-findInput):focus-within {
+    box-shadow: 0 0 0 1px var(--fx-accent), 0 0 10px var(--fx-glow);
+}
+
+/* Widgets (command palette, suggest, hover, notifications) */
+.fx-ui-polish .monaco-workbench :is(.quick-input-widget, .monaco-menu-container,
+    .suggest-widget, .monaco-hover, .notifications-list-container) {
+    box-shadow: 0 8px 28px var(--vscode-widget-shadow, #0005), 0 0 0 1px var(--fx-glow) !important;
+}
+
+/* Panel focus */
+.fx-ui-polish .monaco-workbench .part.panel:focus-within { box-shadow: inset 0 1px var(--fx-accent); }
+
+/* Status bar hover */
+.fx-ui-polish .monaco-workbench .part.statusbar .statusbar-item-label:hover { box-shadow: inset 0 -2px currentColor; }
+
+/* Scrollbar */
+.fx-ui-polish .monaco-workbench .monaco-scrollable-element > .scrollbar > .slider {
+    transition: background-color 180ms ease !important;
+    border-radius: 5px;
+}
+
+/* Sash divider glow */
+.fx-ui-polish .monaco-workbench .monaco-sash.hover { box-shadow: 0 0 6px var(--fx-glow); }
+
+/* Tab lift on hover */
+.fx-tab-lift .monaco-workbench .part.editor .tabs-container .tab:hover {
+    translate: 0 -2px;
+}
+
+/* Button lift/press */
+@media (prefers-reduced-motion: no-preference) {
+    .fx-ui-polish .monaco-workbench .monaco-button:not(.disabled):not([aria-disabled="true"]):hover {
+        translate: 0 -1px;
+    }
+    .fx-ui-polish .monaco-workbench .monaco-button:not(.disabled):not([aria-disabled="true"]):active {
+        translate: 0 1px;
+    }
+    .fx-ui-polish .monaco-workbench .part.activitybar .action-item:not(.disabled) > .action-label:hover {
+        translate: 2px 0;
+    }
+}

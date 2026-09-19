@@ -1,0 +1,31 @@
+/* VS Code FX — Focus Dimming */
+
+/* Window mode — dim unfocused editor groups */
+.fx-dim-window .monaco-workbench .part.editor .editor-group-container:not(:focus-within) {
+    opacity: var(--fx-dim-amount, 0.4);
+    transition: opacity var(--fx-dim-duration, 200ms) ease !important;
+}
+.fx-dim-window .monaco-workbench .part.editor .editor-group-container:focus-within {
+    opacity: 1;
+    transition: opacity var(--fx-dim-duration, 200ms) ease !important;
+}
+
+/* Column mode — dim unfocused columns */
+.fx-dim-column .monaco-workbench .part.editor .split-view-view:not(:focus-within) {
+    opacity: var(--fx-dim-amount, 0.4);
+    transition: opacity var(--fx-dim-duration, 200ms) ease !important;
+}
+.fx-dim-column .monaco-workbench .part.editor .split-view-view:focus-within {
+    opacity: 1;
+    transition: opacity var(--fx-dim-duration, 200ms) ease !important;
+}
+
+/* Full Window mode — dim everything except focused element */
+.fx-dim-fullwindow .monaco-workbench .part:not(:focus-within) {
+    opacity: var(--fx-dim-amount, 0.4);
+    transition: opacity var(--fx-dim-duration, 200ms) ease !important;
+}
+.fx-dim-fullwindow .monaco-workbench .part:focus-within {
+    opacity: 1;
+    transition: opacity var(--fx-dim-duration, 200ms) ease !important;
+}

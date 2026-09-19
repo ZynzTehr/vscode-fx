@@ -1,0 +1,28 @@
+/* VS Code FX — Command Palette Animation */
+
+/* Fade */
+.fx-palette-fade .monaco-workbench .quick-input-widget {
+    animation: fx-palette-fade-in var(--fx-palette-duration, 300ms) ease both !important;
+}
+@keyframes fx-palette-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Scale */
+.fx-palette-scale .monaco-workbench .quick-input-widget {
+    animation: fx-palette-scale-in var(--fx-palette-duration, 300ms) cubic-bezier(.2, .8, .2, 1) both !important;
+}
+@keyframes fx-palette-scale-in {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Slide Down */
+.fx-palette-slideDown .monaco-workbench .quick-input-widget {
+    animation: fx-palette-slide-down var(--fx-palette-duration, 300ms) cubic-bezier(.2, .8, .2, 1) both !important;
+}
+@keyframes fx-palette-slide-down {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
