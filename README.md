@@ -1,4 +1,4 @@
-# ✨ VS Code FX
+# VS Code FX
 
 **Premium animations, neon glows, ripple effects, and smooth motion for VS Code.**
 
@@ -6,7 +6,7 @@ Theme-aware. Fully customizable. Zero configuration needed.
 
 ---
 
-## 🎬 Features
+## Features
 
 | Effect | Description |
 |--------|-------------|
@@ -25,7 +25,7 @@ All effects respect `prefers-reduced-motion` and high-contrast themes.
 
 ---
 
-## 📦 Installation
+## Installation
 
 1. Install **VS Code FX** from the Extensions Marketplace
 2. Install one of the required CSS injection helpers:
@@ -38,7 +38,7 @@ All effects respect `prefers-reduced-motion` and high-contrast themes.
 
 ---
 
-## ⚙️ Settings
+## Settings
 
 All settings are available in **Settings UI** under `Extensions > VS Code FX`.
 
@@ -146,7 +146,7 @@ All settings are available in **Settings UI** under `Extensions > VS Code FX`.
 
 ---
 
-## 🎮 Commands
+## Commands
 
 | Command | Description |
 |---------|-------------|
@@ -157,7 +157,7 @@ All settings are available in **Settings UI** under `Extensions > VS Code FX`.
 
 ---
 
-## 🔧 How It Works
+## How It Works
 
 VS Code FX generates custom CSS and JavaScript based on your settings, then injects them into VS Code's UI via a helper extension ([Custom CSS and JS Loader](https://marketplace.visualstudio.com/items?itemName=be5invis.vscode-custom-css) or [Apc Customize UI++](https://marketplace.visualstudio.com/items?itemName=drcika.apc-extension)).
 
@@ -170,7 +170,7 @@ All animations use CSS custom properties and class toggles, making them lightwei
 
 ---
 
-## ♿ Accessibility
+## Accessibility
 
 - All animations respect `prefers-reduced-motion: reduce`
 - High contrast themes disable glow and decorative effects
@@ -179,12 +179,12 @@ All animations use CSS custom properties and class toggles, making them lightwei
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions welcome! Please open an issue or PR on the [GitHub repository](https://github.com/vscode-fx/vscode-fx).
 
 ---
 
-## 📄 License
+## License
 
 [MIT](LICENSE)
