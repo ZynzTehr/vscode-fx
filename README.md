@@ -14,6 +14,9 @@
   <a href="https://marketplace.visualstudio.com/items?itemName=VSCodeFX.vscode-fx">
     <img src="https://img.shields.io/visual-studio-marketplace/i/VSCodeFX.vscode-fx?style=for-the-badge&color=7b2ff7&label=Installs" alt="Installs" />
   </a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=VSCodeFX.vscode-fx&ssr=false#review-details">
+    <img src="https://img.shields.io/visual-studio-marketplace/r/VSCodeFX.vscode-fx?style=for-the-badge&color=ff6b6b&label=Rating" alt="Rating" />
+  </a>
   <a href="https://github.com/sponsors/ZynzTehr">
     <img src="https://img.shields.io/badge/Sponsor-EA4AAA?style=for-the-badge&logo=githubsponsors&logoColor=white" alt="Sponsor" />
   </a>
@@ -93,6 +96,19 @@ All effects respect `prefers-reduced-motion` and high-contrast themes.
 </td>
 </tr>
 </table>
+
+<!-- 
+📹 RECORDING GUIDE — Replace the static images above with animated GIFs for maximum impact!
+
+To create compelling demo GIFs:
+1. Use a tool like LICEcap, Kap (macOS), or ShareX (Windows) to record your screen
+2. Show a 5-10 second clip of each effect in action
+3. Keep dimensions around 800x500px and file size under 5MB per GIF
+4. Save as: static/demo-glow.gif, static/demo-ripple.gif, static/demo-cursor.gif, etc.
+
+Then replace the <img> tags above with your GIF paths. Animated demos dramatically
+increase install conversion rates on the marketplace.
+-->
 
 ---
 
@@ -219,11 +235,25 @@ If VS Code FX enhances your workspace, sharpens your focus, or elevates your dai
 </p>
 
 ### How your sponsorship helps
-- **New Visual Systems:** Direct funding for upcoming effects, including particle bursts on keypress, audio-reactive ripples, and dedicated synthwave presets.
+- **New Visual Systems:** Direct funding for upcoming effects, including particle bursts on keypress, dedicated synthwave/cyberpunk presets, and minimap heat-glow visualization.
 - **Continuous Compatibility:** Ensuring zero-latency rendering and rock-solid compatibility across every monthly VS Code release and third-party theme.
 - **True Independence:** Keeping the extension completely free, open-source, and community-driven without paywalls or corporate sponsors.
 
 Whether through a one-time tip or ongoing monthly support, every contribution directly powers active development.
+
+---
+
+## ⭐ Enjoying VS Code FX?
+
+If this extension makes your editor feel alive, **a quick rating on the Marketplace goes a long way!**
+
+<p align="center">
+  <a href="https://marketplace.visualstudio.com/items?itemName=VSCodeFX.vscode-fx&ssr=false#review-details">
+    <img src="https://img.shields.io/badge/⭐_Rate_VS_Code_FX-Marketplace-00d4ff?style=for-the-badge&logo=visual-studio-code&logoColor=white" alt="Rate on Marketplace" />
+  </a>
+</p>
+
+Your review helps other developers discover VS Code FX and motivates continued development. Even a quick ⭐⭐⭐⭐⭐ with no text makes a difference!
 
 ---
 

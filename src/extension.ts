@@ -1,6 +1,7 @@
 import * as vscode from "vscode";
 import { generateCSS, getBodyClasses } from "./cssGenerator";
 import { InstallationManager, InstallMethod } from "./installManager";
+import { maybeShowRatingNudge } from "./ratingNudge";
 
 let installManager: InstallationManager;
 
@@ -149,6 +150,9 @@ export async function activate(context: vscode.ExtensionContext): Promise<void> 
   statusBar.command = config.get<boolean>("enabled") ? "vscodeFX.disable" : "vscodeFX.enable";
   statusBar.show();
   context.subscriptions.push(statusBar);
+
+  // === Rating nudge (non-blocking) ===
+  maybeShowRatingNudge(context);
 
   // Log activation
   console.log("VS Code FX activated");

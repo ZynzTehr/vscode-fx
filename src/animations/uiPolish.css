@@ -10,12 +10,35 @@
         translate 180ms cubic-bezier(.2, .8, .2, 1) !important;
 }
 
-/* Editor tab hover — accent top border + inner glow */
+/* Editor tab hover — accent top border via pseudo-element (avoids overflow clip) */
+.fx-ui-polish .monaco-workbench .part.editor .tabs-container .tab {
+    position: relative !important;
+}
+.fx-ui-polish .monaco-workbench .part.editor .tabs-container .tab::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--fx-accent);
+    opacity: 0;
+    transition: opacity var(--fx-speed, 140ms) ease;
+    pointer-events: none;
+    z-index: 10;
+}
+.fx-ui-polish .monaco-workbench .part.editor .tabs-container .tab:hover::after {
+    opacity: 1;
+}
+.fx-ui-polish .monaco-workbench .part.editor .tabs-container .tab.active::after {
+    opacity: 1;
+}
+/* Subtle inner glow on tab hover */
 .fx-ui-polish .monaco-workbench .part.editor .tabs-container .tab:hover {
-    box-shadow: inset 0 2px var(--fx-accent), inset 0 -12px 18px -16px var(--fx-accent) !important;
+    box-shadow: inset 0 -12px 18px -16px var(--fx-accent) !important;
 }
 .fx-ui-polish .monaco-workbench .part.editor .tabs-container .tab.active {
-    box-shadow: inset 0 2px var(--fx-accent), inset 0 8px 16px -12px var(--fx-accent) !important;
+    box-shadow: inset 0 8px 16px -12px var(--fx-accent) !important;
 }
 
 /* Explorer, search, source control, extensions lists */

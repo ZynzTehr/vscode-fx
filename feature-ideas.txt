@@ -1,0 +1,52 @@
+# VS Code FX — Feature Ideas
+# ===========================
+# These are planned features to implement in future versions.
+
+## High Priority
+1. Particle Bursts on Keypress
+   - Tiny glowing dots that burst outward from the cursor each time you type
+   - JS module similar to ripples.js
+   - Configurable: particle count, spread, color, gravity
+
+2. Theme Presets (Synthwave, Cyberpunk, Minimal, Ocean)
+   - Settings dropdown that sets all CSS variables at once
+   - JSON map per preset defining accent colors, glow intensity, speeds
+   - e.g. vscodeFX.preset: "synthwave" → hot pink/cyan, heavy glow
+
+3. Smooth Panel Transitions
+   - Terminal, sidebar, explorer slide in/out instead of snapping
+   - Pure CSS transitions on VS Code panel containers
+   - Easy win, high visual impact
+
+4. Notification Toast Animations
+   - Notifications slide in from the side with glow border
+   - Pure CSS targeting VS Code notification classes
+   - Easy to implement
+
+## Medium Priority
+5. Minimap Heat Glow
+   - Minimap glows warmer in recently edited areas
+   - JS module to track edit positions, apply gradient overlays
+   - Unique feature — nobody does this
+
+6. Bracket Pair Glow
+   - Matching brackets get a pulsing glow aura when cursor is on one
+   - CSS-only if VS Code provides the right classes, otherwise JS-assisted
+
+7. Git Diff Line Glow
+   - Added lines glow green, removed glow red with subtle pulse
+   - Pure CSS targeting VS Code diff decoration classes
+
+8. Focus Tunnel (Vignette)
+   - When focus dimming is on, add vignette gradient around focused panel edges
+   - More cinematic than simple opacity dimming
+
+## Experimental
+9. Typing Combo Counter
+   - Small fading counter near cursor showing typing streak
+   - Resets after pause, gamifies coding
+   - JS module
+
+10. Cursor Trail Particles
+    - Small dots that fall behind cursor as it moves, with gravity
+    - JS-based, extends the current trail cursor mode

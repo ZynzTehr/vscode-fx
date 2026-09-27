@@ -9,9 +9,8 @@
     border: 1px solid var(--fx-glow-border, rgba(29, 169, 234, 0.6)) !important;
 }
 
-/* Syntax token text-shadow glow */
+/* Syntax token text-shadow glow — subtle, not blurry */
 .fx-syntax-glow .monaco-editor .view-line span > span {
-    text-shadow: 0 0 2px rgba(255, 255, 255, 0.3),
-                 0 0 10px currentColor,
-                 0 0 2px currentColor !important;
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.15),
+                 0 0 4px currentColor !important;
 }

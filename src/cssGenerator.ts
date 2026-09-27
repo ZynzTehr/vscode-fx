@@ -130,9 +130,27 @@ export function generateCSS(context: vscode.ExtensionContext): { cssPath: string
     css += `\n/* User Custom CSS */\n${customCSS}\n`;
   }
 
+  // === Body Classes JS (must run before ripples) ===
+  const bodyClasses = getBodyClasses(config);
+  if (bodyClasses.length > 0) {
+    const classList = JSON.stringify(bodyClasses);
+    js += `/** VS Code FX — Apply body classes for CSS selectors */\n`;
+    js += `(() => {\n`;
+    js += `  const classes = ${classList};\n`;
+    js += `  function apply() {\n`;
+    js += `    if (document.body) {\n`;
+    js += `      document.body.classList.add(...classes);\n`;
+    js += `    } else {\n`;
+    js += `      requestAnimationFrame(apply);\n`;
+    js += `    }\n`;
+    js += `  }\n`;
+    js += `  apply();\n`;
+    js += `})();\n\n`;
+  }
+
   // === Ripples JS ===
   if (config.get<boolean>("ripples.enabled")) {
-    js = readAnimFile(animDir, "ripples.js");
+    js += readAnimFile(animDir, "ripples.js");
   }
 
   writeDist(distDir, css, js);

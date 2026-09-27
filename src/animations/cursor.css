@@ -7,9 +7,10 @@
 
 /* Trail cursor — leaves a fading after-image */
 .fx-cursor-trail .monaco-editor .cursor {
-    transition: all var(--fx-cursor-duration, 200ms) ease-out !important;
-    box-shadow: 0 0 6px var(--fx-accent),
-                0 0 12px color-mix(in srgb, var(--fx-accent) 40%, transparent) !important;
+    transition: all var(--fx-cursor-trail-duration, 350ms) cubic-bezier(.1, .9, .2, 1) !important;
+    box-shadow: 0 0 8px var(--fx-accent),
+                0 0 18px color-mix(in srgb, var(--fx-accent) 50%, transparent),
+                0 0 36px color-mix(in srgb, var(--fx-accent) 20%, transparent) !important;
 }
 
 /* Fade cursor */
